@@ -39,3 +39,15 @@ for i = 5:length(path_x)
     x_array = [x_array, x];
     y_array = [y_array, y];
 end
+
+% Plot path and robot arm
+figure;
+plot(path_x, path_y, 'k--', 'LineWidth', 2);
+hold on;
+plot(x_array, y_array, 'b-', 'LineWidth', 2);
+plot(4, 5, 'ro', 'MarkerSize', 10, 'MarkerFaceColor', 'r');
+axis equal;
+legend('Desired path', 'Robot arm path', 'Start point');
+xlabel('X coordinate');
+ylabel('Y coordinate');
+title('Robot arm path tracing with inverse kinematics');
